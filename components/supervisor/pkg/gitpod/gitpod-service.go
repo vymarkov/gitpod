@@ -564,6 +564,11 @@ func (gp *APIoverJSONRPC) GetWorkspace(ctx context.Context, id string) (res *Wor
 	_params = append(_params, id)
 
 	var result WorkspaceInfo
+	if gp == nil {
+		log.Warn("gp is nil!")
+	} else if gp.C == nil {
+		log.Warn("gp.C is nil!")
+	}
 	err = gp.C.Call(ctx, "getWorkspace", _params, &result)
 	if err != nil {
 		return
