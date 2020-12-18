@@ -1,0 +1,51 @@
+{
+    "error": "",
+    "layer": [
+        {
+            "Descriptor": {
+                "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+                "digest": "sha256:03804e1be1ae97bbc54bfefcde26c2c8696fc454103a3a36e062eaf964c74b48",
+                "size": 12338319
+            },
+            "DiffID": "sha256:8ca4356f44cae29e52ab169e5f28a080c8c88d3db80325e3b68bda2fd6f3ee4b"
+        },
+        {
+            "Descriptor": {
+                "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+                "digest": "sha256:77ed77849c0f97059266656fec710c90be09a98471b2786a8e5b6032a96dd22d",
+                "size": 25081910
+            },
+            "DiffID": "sha256:062ac8497c541b2d1ba61768a98eda256853b28389581c7999154e253fa3fdf9"
+        },
+        {
+            "Descriptor": {
+                "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+                "digest": "sha256:9b6d6b78cca49283b9a9e74eca7e37c683a3e6ba140ddcf89a42056ef2d403b9",
+                "size": 23263267
+            },
+            "DiffID": "sha256:3f17bb82d8473cd601af072a70d7b7ca841501b025af38453e6ab99b408dccbb"
+        },
+        {
+            "Descriptor": {
+                "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+                "digest": "sha256:fa833f3def68ddf72b72b29f96eed482b8719720ea56a0c1e1ee249800c89110",
+                "size": 1195
+            },
+            "DiffID": "sha256:61817129ab0494ff188ad2d914c2eb250179006d366fede624147e6a8ea357d4"
+        },
+        {
+            "Descriptor": {
+                "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
+                "digest": "sha256:82d51cb1808edb210a4cf72b4d77b59447cce0bacab31c03a99ce6b9257ea2d1",
+                "size": 273
+            },
+            "DiffID": "sha256:5f170d2f9cee14fbd298a250745021940efd954a9af5025e4912a37f386f7cca"
+        }
+    ],
+    "envs": [
+        "PATH=/ide/bin:/usr/bin",
+        "EDITOR=code",
+        "GIT_EDITOR=code --wait",
+        "VISUAL=code"
+    ]
+}
