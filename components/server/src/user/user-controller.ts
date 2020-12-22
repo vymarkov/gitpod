@@ -77,7 +77,7 @@ export class UserController {
             try {
                 await saveSession(req);
             } catch (error) {
-                increaseLoginCounter("failed", "🤷🏻‍♂️")
+                increaseLoginCounter("failed", "unkown")
                 log.error(`Login failed due to session save error; redirecting to /sorry`, { req, error, clientInfo });
                 res.redirect(this.getSorryUrl("Login failed 🦄 Please try again"));
             }

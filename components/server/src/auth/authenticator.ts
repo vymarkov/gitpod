@@ -108,7 +108,7 @@ export class Authenticator {
         const host: string = req.query.host;
         const authProvider = host && await this.getAuthProviderForHost(host);
         if (!host || !authProvider) {
-            increaseLoginCounter("failed", "🤷🏻‍♂️")
+            increaseLoginCounter("failed", "unkown")
             log.info({ sessionId: req.sessionID }, `Bad request: missing parameters.`, { req, 'login-flow': true });
             res.redirect(this.getSorryUrl(`Bad request: missing parameters.`));
             return;
@@ -140,6 +140,8 @@ export class Authenticator {
         });
         // authenticate user
         authProvider.authorize(req, res, next);
+        // TODO (arthursens): the line below is wrong!
+        // We are increasing the succesful counter even if authorization failed
         increaseLoginCounter("succeeded", authProvider.info.host)
     }
     protected async isInSetupMode() {
