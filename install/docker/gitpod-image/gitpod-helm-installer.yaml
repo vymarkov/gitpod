@@ -28,6 +28,8 @@ spec:
         hostPath:
           path: /chart
     restartPolicy: OnFailure
+    nodeSelector:
+      node-role.kubernetes.io/master: "true"
 
 ---
 
