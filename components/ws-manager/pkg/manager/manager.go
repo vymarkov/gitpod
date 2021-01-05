@@ -1227,7 +1227,7 @@ func newWssyncConnectionFactory(managerConfig Configuration) (grpcpool.Factory, 
 			log.WithError(err).WithField("addr", addr).Error("cannot connect to ws-daemon")
 
 			// we deliberately swallow the error here as users might see this one.
-			return nil, xerrors.Errorf("cannot connect to workspace daemon")
+			return nil, xerrors.Errorf("cannot connect to workspace daemon at addr %s: %w", addr, err)
 		}
 		return conn, nil
 	}, nil
