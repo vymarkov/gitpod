@@ -6,6 +6,7 @@ package daemon
 
 import (
 	"context"
+	"io/ioutil"
 
 	"github.com/gitpod-io/gitpod/content-service/api"
 	"github.com/gitpod-io/gitpod/content-service/pkg/service"
@@ -61,7 +62,13 @@ func tmp(strg storage.Config) error {
 		return xerrors.Errorf("cannot do blobstore: %w", err)
 	}
 
-	_, _, err = remoteStorage.Upload(ctx, "/etc/hosts", "config.json")
+	data := make([]byte, 1e+9) // 1 GB
+	err = ioutil.WriteFile("/testfile", data, 0644)
+	if err != nil {
+		return xerrors.Errorf("error writing big file: %w", err)
+	}
+
+	_, _, err = remoteStorage.Upload(ctx, "/testfile", "config.json")
 	if err != nil {
 		return xerrors.Errorf("cannot upload to configured storage (2): %w", err)
 	}
